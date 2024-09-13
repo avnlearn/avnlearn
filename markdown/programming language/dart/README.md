@@ -19,28 +19,26 @@
 
 ## Variable Declaration
 
-### Type inferred
-
 ```dart
+// Type inferred
 var number = 30101998;
 var decimal = 3010.1998;
 var country = 'India';
 var developer = True;
-```
-### Explicit type
 
-```dart
+// Explicit type
 int number = 30101998;
 double decimal = 3010.1998;
 String country = 'India';
 bool developer = true;
-```
 
 ## Constants
 
 ```dart
-final String lastName = 'Doe'; // Runtime constant
-const int maxItems = 10; // Compile-time constant
+// Runtime constant
+final String lastName = 'Doe';
+// Compile-time constant
+const int maxItems = 10;
 ```
 
 # 3. Data Types
