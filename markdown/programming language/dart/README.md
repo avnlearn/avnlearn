@@ -2,6 +2,8 @@
 
 # 1. Basic Syntax
 
+Every app requires the top-level main() function, where execution starts. Functions that don't explicitly return a value have the void return type.
+
 - **Entry Point**
 
   ```dart
