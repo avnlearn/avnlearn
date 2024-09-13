@@ -26,6 +26,13 @@ var number = 30101998;
 var decimal = 3010.1998;
 var country = 'India';
 var developer = True;
+var months = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday'];
+var profile = {
+  'name': "Riya Mehta",
+  'age': 20,
+  'skill' : ['Programmer', 'Teacher']
+};
+var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
 
 // Explicit type
 int number = 30101998;
@@ -53,10 +60,42 @@ const int maxItems = 10;
 - `bool`: Boolean values (true/false)
 
 ## 3.2 Collections
+### `List`: Ordered collection
+```dart
+var vowels = ['A', 'E', 'I', 'O', 'U'];
+// Access 
+print(vowels) // ['A', 'E', 'I', 'O', 'U']
+print(vowels.length) // 5
+print(vowels[0]) // A
+// Insert
+vowels[5] = 'W'
+vowels.add('W') // Append Method
+vowels.addAll({'X', 'Y'});
+```
+ [more](https://api.dart.dev/stable/3.5.3/dart-core/List-class.html)
 
-- **List**: Ordered collection
-- **Set**: Unordered collection of unique items
-- **Map**: Key-value pairs
+### `Set` : Unordered collection of unique items,
+```dart
+var list = {1, 2, 3};
+```
+ [more](https://api.dart.dev/stable/3.5.3/dart-core/Set-class.html)
+
+### `Map` : Key-value pairs,
+```dart
+var gifts = {
+  // Key:    Value
+  'first': 'partridge',
+  'second': 'turtledoves',
+  'fifth': 'golden rings'
+};
+
+var nobleGases = {
+  2: 'helium',
+  10: 'neon',
+  18: 'argon',
+};
+```
+ [more](https://api.dart.dev/stable/3.5.3/dart-core/Map-class.html)
 
 # 4. Control Flow
 
