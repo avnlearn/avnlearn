@@ -31,6 +31,7 @@ int number = 30101998;
 double decimal = 3010.1998;
 String country = 'India';
 bool developer = true;
+```
 
 ## Constants
 
