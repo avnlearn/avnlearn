@@ -19,9 +19,21 @@
 
 ## Variable Declaration
 
+### Type inferred
+
 ```dart
-var name = 'Alice'; // Type inferred
-String city = 'New York'; // Explicit type
+var number = 30101998;
+var decimal = 3010.1998;
+var country = 'India';
+var developer = True;
+```
+### Explicit type
+
+```dart
+int number = 30101998;
+double decimal = 3010.1998;
+String country = 'India';
+bool developer = true;
 ```
 
 ## Constants
