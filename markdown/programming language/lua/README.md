@@ -131,6 +131,3 @@ if not status then
     print("Error: " .. err)
 end
 ```
-
-### Conclusion
-This is a basic overview of Lua. You can explore more advanced topics like metatables, coroutines, and the Lua C API as you become more comfortable with the language. For more detailed information, refer to the [official Lua documentation](https://www.lua.org/manual/5.3/). Happy coding!
