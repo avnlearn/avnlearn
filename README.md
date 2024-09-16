@@ -2,7 +2,7 @@
 
 # Programming Language
 
-- [Bash](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/bash/README.md)
+- [![Bash](https://duckduckgo.com/i/b34d8a011d7ad9f6.png)](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/bash/README.md)
 - [C](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/c/README.md)
 - [C#](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/c++/README.md)
 - [C++](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/c++/README.md)
