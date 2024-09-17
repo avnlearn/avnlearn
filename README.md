@@ -11,7 +11,7 @@
 - [haskell](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/haskell/README.md)
 - [Java](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/java/README.md)
 - [Javascript](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/javascript/README.md)
-- [Kotlin](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/Kotlin/README.md)
+- [![Kotlin](https://kotlinlang.org/docs/images/kotlin-logo.png)](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/Kotlin/README.md)
 - [Lua](https://github.com/avnlearn/avnlearn/blob/main/markdown/programming%20language/lua/README.md)
 
 
