@@ -342,6 +342,7 @@ class Rectangle {
 }
 ```
 
+
 ### Static Members
 Static members belong to the class itself rather than to any specific instance. They can be accessed without creating an instance of the class.
 
@@ -574,10 +575,45 @@ void main() {
 }
 
 ```
+## Composition
+Composition is a design principle where a class is composed of one or more objects from other classes, rather than inheriting from them. This promotes greater flexibility and reusability.
+
+```dart
+class Engine {
+  void start() {
+    print('Engine started');
+  }
+}
+
+class Car {
+  final Engine engine;
+
+  Car(this.engine);
+
+  void start() {
+    engine.start();
+    print('Car started');
+  }
+}
+
+void main() {
+  var engine = Engine();
+  var car = Car(engine);
+  car.start(); // Output: Engine started
+               //         Car started
+}
+```
 
 ## Encapsulation
 Encapsulation is the bundling of data and methods that operate on that data within one unit, and restricting access to some of the object's components.
 
+Encapsulation is the bundling of data (attributes) and methods that operate on that data within a single unit (class). It restricts direct access to some of the object's components, which is a means of preventing unintended interference and misuse.
+
+### Access Modifiers
+Dart provides access modifiers to control the visibility of class members:
+
+* **Public**: Members are accessible from anywhere (default).
+* **Private**: Members are accessible only within the same library. In Dart, you can make a member private by prefixing its name with an underscore (`_`).
 
 ```dart
 class BankAccount {
