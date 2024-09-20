@@ -1,0 +1,6 @@
+jupyterlab
+notebook
+voila
+jupyterhub
+ipykernel
+jupyter-console
