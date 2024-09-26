@@ -1,0 +1,72 @@
+Vagrant.configure("2") do |config|
+    # config.vm.box = "avnlearn-site"
+    # Use the official Ubuntu box
+    config.vm.box = "ubuntu/bionic64"
+    # Using NFS for better performance
+    # config.vm.synced_folder "./site", "/var/www/html", type: "nfs"
+    # Forward ports
+    # config.vm.network "forwarded_port", guest: 80, host: 8000
+    # Network configuration
+    config.vm.network "private_network", type: "dhcp" # Use DHCP for private network
+    config.vm.hostname = "myproject.local" # Set the hostname
+    # Shared Folders
+    # config.vm.synced_folder './site', '/var/www/html', SharedFoldersEnableSymlinksCreate: false
+    # Use rsync for automatic file syncing
+    config.vm.synced_folder './site', '/var/www/html', type: "rsync", rsync__auto: true
+    # Provisioning with shell script
+    config.vm.provision "shell", inline: <<-SHELL
+      # Update and install necessary packages
+      apt-get update
+      apt-get install -y apache2 mysql-server php libapache2-mod-php php-mysql php-cli php-curl php-zip php-gd php-mbstring
+
+      # Start Apache and MySQL
+      systemctl enable apache2
+      systemctl enable mysql
+      systemctl start apache2
+      systemctl start mysql
+  
+      # Download and set up WordPress
+      # cd /var/www/html
+      # wget https://wordpress.org/latest.tar.gz
+      # tar -xvzf latest.tar.gz
+      # mv wordpress/* ./
+      # rm -rf wordpress latest.tar.gz
+  
+      # Set permissions
+      chown -R www-data:www-data /var/www/html
+      chmod -R 755 /var/www/html
+      
+      # Enable Apache mod_rewrite
+      a2enmod rewrite
+      systemctl restart apache2
+
+      # Create a MySQL database for WordPress
+      service mysql start
+      mysql -e "CREATE DATABASE 'wordpress'"
+      mysql -e "CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'password';"
+      mysql -e "GRANT ALL PRIVILEGES ON u591392136_RZ4e8.* TO 'wp_user'@'localhost';"
+      mysql -e "FLUSH PRIVILEGES;"
+    SHELL
+
+    # Custom Apache configuration for the domain
+    config.vm.provision "shell", inline: <<-SHELL
+      echo "<VirtualHost *:80>
+          ServerName myproject.local
+          DocumentRoot /var/www/html
+          <Directory /var/www/html>
+              AllowOverride All
+              Require all granted
+          </Directory>
+      </VirtualHost>" > /etc/apache2/sites-available/myproject.conf
+
+      a2ensite myproject.conf
+      systemctl restart apache2
+    SHELL
+
+    # Instruction to update the hosts file
+    config.vm.provision "shell", inline: <<-SHELL
+      echo "Please add the following line to your hosts file:"
+      echo "127.0.0.1 myproject.local"
+      echo "You can do this by running 'sudo nano /etc/hosts' on Linux/Mac or editing 'C:\\Windows\\System32\\drivers\\etc\\hosts' on Windows."
+    SHELL
+  end
